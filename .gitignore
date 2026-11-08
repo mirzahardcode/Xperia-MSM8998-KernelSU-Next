@@ -1,0 +1,27 @@
+# Build output
+out/
+build/
+*.img
+*.zip
+*.dtb
+*.dtbo
+*.ko
+*.o
+*.a
+*.so
+*.cmd
+*.mod
+*.mod.c
+*.order
+*.symvers
+
+# Local configuration and logs
+.env
+*.log
+.config
+.config.old
+compile_commands.json
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
