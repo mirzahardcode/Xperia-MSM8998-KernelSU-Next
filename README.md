@@ -1,8 +1,8 @@
 # Xperia MSM8998 KernelSU Next
 
-> **Status: PRE-ALPHA — documentation and preparation only.**
+> **Status: PRE-ALPHA — integration patch preparation in progress.**
 >
-> KernelSU Next has **not** been integrated, built, booted, or verified in this project.
+> No integrated kernel has been built, booted, or verified on hardware. The local WSL checkouts are not modified by this documentation repository.
 
 Community investigation for KernelSU Next Legacy on Sony Xperia XZ Premium (Maple, Qualcomm MSM8998), targeting the Linux 4.4.302 kernel family.
 
@@ -24,18 +24,27 @@ Community investigation for KernelSU Next Legacy on Sony Xperia XZ Premium (Mapl
 
 These are initial notes from one device, not a guarantee for every Maple variant or ROM build.
 
+## Pinned investigation sources
+| Component | Branch | Commit |
+|---|---|---|
+| Kernel | `lineage-22.1` | `7a4c7d73f8ec401b89bd1ab815d2b4ccf801ec3f` |
+| KernelSU Next | `legacy` | `b933b1f728116a456fbebf27b6a8772a640cdf23` |
+| Maple defconfig | `lineage-msm8998-yoshino-maple_defconfig` | In the kernel source above |
+
+The patch-preparation script refuses to operate on different source commits. Update the pins only after re-auditing the changed upstream source.
+
 ## Current status
 | Work item | Status |
 |---|---|
-| Repository scaffold | In progress |
-| Exact source commit identified | Not yet |
-| Matching defconfig identified | Not yet |
-| KernelSU Next revision pinned | Not yet |
-| Kprobe support audited | Not yet |
-| Manual integration reviewed | Not yet |
+| Repository scaffold | Complete |
+| Kernel source commit identified | Complete |
+| Maple defconfig identified | Complete |
+| KernelSU Next revision pinned | Complete |
+| Kprobe/manual-hook feasibility audit | Complete |
+| Manual hook patcher prepared | Prepared; not applied to the local WSL trees |
 | Kernel built / device boot verified | Not tested |
 
-See [docs/status.md](docs/status.md).
+See [docs/status.md](docs/status.md) and [docs/implementation-v1.md](docs/implementation-v1.md).
 
 ## Safety
 - Do not flash an unverified kernel image.
